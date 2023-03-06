@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
-// import App from './App.vue'
-import App from './base/01.reactive.vue'
+import App from './App.vue'
+// import App from './base/10.hooks.vue'
 import router from './router'
 import store from './store'
 

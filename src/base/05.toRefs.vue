@@ -1,18 +1,18 @@
 <template>
   <div>
-    {{ obj.name }}
+    {{ name }}
     <button @click="handleClick">change</button>
 
-    <input type="text" v-model="obj.text" ref="mytextref">
+    <input type="text" v-model="text" ref="mytextref">
     <button @click="addClick">Add</button>
     <ul>
-      <li v-for="item in obj.list" :key="item">{{ item }}</li>
+      <li v-for="item in list" :key="item">{{ item }}</li>
     </ul>
   </div>
 </template>
 
 <script>
-import {reactive, ref} from 'vue'
+import {reactive, ref, toRefs} from 'vue'
 export default {
   setup() {
     const obj = reactive({
@@ -34,7 +34,7 @@ export default {
     }
 
     return {
-      obj,
+      ...toRefs(obj),
       handleClick,
       mytextref,
       addClick
